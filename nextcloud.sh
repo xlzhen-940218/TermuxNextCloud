@@ -2,7 +2,7 @@
 cd ~/
 pkg upgrade -y \
 pkg install openssh -y \
-if [ -e x.txt ]
+if [ -e ~/latest.zip ]
 then
     unzip ~/latest.zip \
 else
