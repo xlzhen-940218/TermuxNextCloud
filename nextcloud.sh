@@ -1,8 +1,14 @@
+#!/bin/bash
 cd ~/
 pkg upgrade -y \
 pkg install openssh -y \
-pkg install wget -y && wget https://download.nextcloud.com/server/releases/latest.zip \
-unzip ~/latest.zip \
+if [ -e x.txt ]
+then
+    unzip ~/latest.zip \
+else
+    pkg install wget -y && wget https://download.nextcloud.com/server/releases/latest.zip \
+    unzip ~/latest.zip \
+fi
 pkg install php -y \
 echo \"cd ~/nextcloud && php -S 0.0.0.0:8888\" > start_server.sh \
 chmod 777 start_server.sh \
