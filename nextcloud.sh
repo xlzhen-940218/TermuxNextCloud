@@ -2,12 +2,11 @@
 cd ~/
 pkg upgrade -y \
 pkg install openssh -y \
-if [ -e ~/latest.zip ]
-then
-    unzip ~/latest.zip \
+if [ -e ~/latest.zip ]; then
+    unzip ~/latest.zip 
 else
-    pkg install wget -y && wget https://download.nextcloud.com/server/releases/latest.zip \
-    unzip ~/latest.zip \
+    pkg install wget -y && wget https://download.nextcloud.com/server/releases/latest.zip 
+    unzip ~/latest.zip 
 fi
 pkg install php -y \
 echo \"cd ~/nextcloud && php -S 0.0.0.0:8888\" > start_server.sh \
