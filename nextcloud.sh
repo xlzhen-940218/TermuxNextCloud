@@ -3,12 +3,13 @@ cd ~/;
 pkg upgrade -y;
 pkg install wget unzip openssh php -y;
 if [ ! -f ~/latest.zip ]; then
-    echo "File not found, start download..."
+    echo "nextcloud File not found, start download..."
     pkg install wget -y && wget https://download.nextcloud.com/server/releases/latest.zip
 else
-    echo "File exist,unzip..."
-    unzip ~/latest.zip
+    echo "nextcloud File exist"
 fi
+echo "unzip nextcloud..."
+unzip ~/latest.zip
 echo "create start_server.sh file";
 echo "cd ~/nextcloud && php -S 0.0.0.0:8888" > start_server.sh;
 echo "set admin privigate permission to start_server.sh";
