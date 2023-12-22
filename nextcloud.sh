@@ -17,4 +17,5 @@ chmod 777 start_server.sh;
 echo "set nextcloud php server init,please access link http://localhost:8888";
 echo "sshd \nnohup ~/start_server.sh > /dev/null 2>&1 &" > ~/.bashrc;
 echo "start server...";
+sshd
 nohup ~/start_server.sh > /dev/null 2>&1 &
